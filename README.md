@@ -2,13 +2,27 @@
 
 ## Background
 
-Using a dataset of historical lending activity, from a peer-to-peer lending services company, and leveraging machine learning techniques to train and evaluate a model that can predict loan risk.  The machine learning classification model(s) is developed to identify the creditworthiness of the borrowers.
+The nonprofit foundation Alphabet Soup wants a tool that can help it select the applicants for funding with the best chance of success in their ventures.  With the knowledge of machine learning and neural networks, and using the features in the provided dataset (mentioned below), a binary classifier was created that can predict whether applicants will be successful if funded by Alphabet Soup.
+
+Alphabet Soup's business team provided a CSV dataset that containd more than 34,000 organizations that have received funding from Alphabet Soup over the years.  Within that dataset were a number of columns that captured metadata about each organization.  The columns included the following information:
+   - EIN and NAME = The 2 identification columns.
+   - APPLICATION_TYPE = Alphabet Soup application type.
+   - AFFILIATION = Affiliation sector of industry.
+   - CLASSIFICATION = Government organization classification.
+   - USE_CASE = Use case for funding.
+   - ORGANIZATION = Organization type.
+   - STATUS = Active status.
+   - INCOME_AMT = Income classification.
+   - SPECIAL_CONSIDERATIONS = Special considerations for application.
+   - ASK_AMT = Funding amount requested.
+   - IS-SUCCESSFUL = Was the money used effectively.
 
 ### Before opening the starterCode folder
 
-1. I created a new repository in GitHub for this project called `credit-risk-classification`. 
+1. I created a new repository in GitHub for this project called `deep-learning challenge`. 
 2. Inside the new repository I cloned the new repository to my computer.
-3. Inside my local Git repository, I created a folder titled "Credit_Risk" and added the starter Jupitor Notebook code credit_risk_classification.ipynb and the folder "Resources" that contains the dataset lending_data.csv.
+3. Inside my local Git repository, I added the starter Jupitor Notebook code Starter_Code.ipynb.
+4. I uploaded Starter_Code.ipynb into Google Colab and completed the steps for building the first Neural Network model and the second optimized Neural Network model.
 
 ## Overview of the Analysis
 
