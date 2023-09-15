@@ -17,7 +17,7 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
    - ASK_AMT = Funding amount requested.
    - IS-SUCCESSFUL = Was the money used effectively.
 
-### Before opening the starterCode folder
+### Before opening the StarterCode folder
 
 1. I created a new repository in GitHub for this project called `deep-learning-challenge`. 
 2. Inside the new repository I cloned the new repository to my computer.
@@ -26,20 +26,26 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
 
 ## Overview of the Analysis
 
-1. The dataset charity_data.csv contained potential features (variables) about the 34,299 organizations that requested funding from the non-profit foundation Alphabet Soup. 18,261 of the organizations are identified as "using the funds effectively" (IS-SUCCESSFUL = 1) and the remaining 16,038 organizations are identified as "not using the funds effectively" (IS-SUCCESSFUL = 0).  The purpose of the analysis is to build a neural network model that would predict the classification of organizations into "successful" vs. "not successful" in using the funds effectively; that is, predict whether applicants will be successful if funded by Alphabet Soup.
+1. The dataset charity_data.csv contained potential features (variables) about the 34,299 organizations that requested funding from the non-profit foundation Alphabet Soup. 18,261 of the organizations were identified as "using the funds effectively" (IS-SUCCESSFUL = 1) and the remaining 16,038 organizations were identified as "not using the funds effectively" (IS-SUCCESSFUL = 0).  The purpose of the analysis is to build a Machine Learning model that would predict the classification of organizations into "successful" vs. "not successful" in using the funds effectively; that is, predict whether applicants will be successful if funded by Alphabet Soup.
 
 2. The following steps were implemented for building both Neural Network models:
-   - Pre-processed the data.
+   - STEP 1: Pre-processed the data.
       * Read in the charity_data.csv to a Pandas DataFrame, and identified the target and the features for the model.
       * Dropped columns that were not considered features for the model.
       * Determined the number of unique values for each column.
       * Used the number of data points for each unique value to pick a cutoff point to bin "rare" categorial variables together in a new value "other", and checked if the           binning was successful.
       * Used pd.get.dummies() to encode categorical variables.
-      * Split the preprocessed data into a features array x, and a target array y.  Then used these arrays and the train_test_split function to split the data into training         and testing datasets.
-      * Scaled the training and testing features datasets by creating a StandardScaler instance, fitting it to the training data, then used the transform function.
-        
-   - Save the predictions for the testing data labels by using the testing feature data (x_test) and the fitted model.
-   - Evaluate the model's performance by generating a confusion matrix and printing the classification report.
+      * Split the preprocessed data into a features array x, and a target array y.  Then used these arrays and the "train_test_split" function to split the data into                training and testing datasets.
+      * Scaled the training and testing features datasets by creating a StandardScaler instance, fitting it to the training data, then used the "transform" function.     
+   - STEP 2: Compiled, Trained, and Evaluated the Model(s).
+      * Created a neural network model by assigning the number of input features and nodes for each layer using TensorFlow and Keras.
+      * Created the first hidden layer and chose an appropriate activation function.
+      * Added a second hiddne layer,if necessary, with an appropriate activation function.
+      * Checked the structure of the model.
+      * Compiled and trained the model.
+      * Determined the number of Epochs.
+      * Evaluated the model using the test data to determine the loss and accuracy.
+      * Saved and exported the model results to an HDF5 file.
 
 3. Two different models were developed:
    - Logistic Regression Model (#1) with the original dataset lending_data.csv, that included 75,036 low-risk loans and 2,500 high-risk loans.  The dataset was split into 2      groups (75% to 25% split); the training dataset for building the model with 58,152 borrowers that included 56,277 low-risk loans and 1,875 high-risk loans, and the          test dataset with 19,384 borrowers that included 18,759 low-risk loans and 625 high-risk loans.
