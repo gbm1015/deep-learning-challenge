@@ -40,7 +40,7 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
    - STEP 2: Compiled, Trained, and Evaluated the Model(s).
       * Created a neural network model by assigning the number of input features and nodes for each layer using TensorFlow and Keras.
       * Created the first hidden layer and chose an appropriate activation function.
-      * Added a second hiddne layer,if necessary, with an appropriate activation function.
+      * Added a second hiddne layer, if necessary, with an appropriate activation function.
       * Checked the structure of the model.
       * Compiled and trained the model.
       * Determined the number of Epochs.
