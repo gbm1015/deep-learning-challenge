@@ -46,11 +46,30 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
       * Determined the number of Epochs.
       * Evaluated the model using the test data to determine the loss and accuracy.
       * Saved and exported the model results to an HDF5 file.
-
+   - STEP 3: Optimized the first Neural Network model to achieve a target predictive accuracy higher than 75%.
+     
 3. Two different models were developed:
-   - Logistic Regression Model (#1) with the original dataset lending_data.csv, that included 75,036 low-risk loans and 2,500 high-risk loans.  The dataset was split into 2      groups (75% to 25% split); the training dataset for building the model with 58,152 borrowers that included 56,277 low-risk loans and 1,875 high-risk loans, and the          test dataset with 19,384 borrowers that included 18,759 low-risk loans and 625 high-risk loans.
-   - Logistics Regression Model (#2) with oversampling the high-risk loans in the training dataset using RandomOverSampler module from imbalanced-learn, which generated a        new dataset of 56,277 low-risk loans (same as what was included in the Logistic Regression Model #1 training dataset) and 56,277 high-risk loans (oversampling the # of      high-risk loans from the original 1,875 that was included in the Logistic Regrsssion #1 training dataset).
-
+   - Neural Network Model #1
+     * Target Variable = "IS_SUCCESSFUL"
+     * Features = "APPLICATION_TYPE","AFFILIATION","CLASSIFICATION","USE_CASE","ORGANIZATION","STATUS","INCOME_AMT","SPECIAL_CONSIDERATIONS","ASK_AMT".
+     * Neither Target nor Features = "EIN" and "NAME", the 2 identification columns, that were removed from the input data.
+     * 2 hidden layers and 1 output layer.  Given the few # of features for consideration, the almost 50/50 split between successful vs. non-successful organizations (53%          and 47%, respectively), I anticipated that 2 hidden layers and the selected activation functions would result in an acceptable accuracy and loss scores.
+          The first hidden layer had 10 nodes, and activation function "tanh", 440 parameters.
+          The second hidden layer had 5 nodes, and activation function "relu", 55 parameters.
+          The ouput layer had 1 node, and activation function "relu", 6 parameters.
+          Ran 100 epochs.
+     * After 100 epochs, including binning and scaling the training and testing features' datasets, the model's accuracy score was 72.7% and the loss score was 57.5%.
+      
+   - (Optimized) Neural Network Model #2
+     * Target Variable = "IS_SUCCESSFUL"
+     * Features = "APPLICATION_TYPE","AFFILIATION","CLASSIFICATION","USE_CASE","ORGANIZATION","STATUS","INCOME_AMT","SPECIAL_CONSIDERATIONS","ASK_AMT".
+     * Neither Target nor Features = "EIN" and "NAME", the 2 identification columns, that were removed from the input data.
+     * 2 hidden layers and 1 output layer.  Given the few # of features for consideration, the almost 50/50 split between successful vs. non-successful organizations (53%          and 47%, respectively), I anticipated that 2 hidden layers and the selected activation functions would result in an acceptable accuracy and loss scores.
+          The first hidden layer had 10 nodes, and activation function "tanh", 440 parameters.
+          The second hidden layer had 5 nodes, and activation function "relu", 55 parameters.
+          The ouput layer had 1 node, and activation function "relu", 6 parameters.
+          Ran 100 epochs.
+     * After 100 epochs, including binning and scaling the training and testing features' datasets, the model's accuracy score was 72.7% and the loss score was 57.5%.
 4. The following steps were implemented for building both Logistics Regression models:
    - Fit a logistic regression model by using the training dataset (x_train and y_train).
    - Save the predictions for the testing data labels by using the testing feature data (x_test) and the fitted model.
