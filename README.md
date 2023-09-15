@@ -4,7 +4,7 @@
 
 The nonprofit foundation Alphabet Soup wants a tool that can help it select the applicants for funding with the best chance of success in their ventures.  With the knowledge of machine learning and neural networks, and using the features in the provided dataset (mentioned below), a binary classifier was created that can predict whether applicants will be successful if funded by Alphabet Soup.
 
-Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that containd 34,300 organizations that have received funding from Alphabet Soup over the years.  Within that dataset were a number of columns that captured metadata about each organization.  The columns included the following information:
+Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that containd 34,299 organizations that have received funding from Alphabet Soup over the years.  Within that dataset were a number of columns that captured metadata about each organization.  The columns included the following information:
    - EIN and NAME = The 2 identification columns.
    - APPLICATION_TYPE = Alphabet Soup application type.
    - AFFILIATION = Affiliation sector of industry.
@@ -26,7 +26,7 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
 
 ## Overview of the Analysis
 
-1. The dataset charity_data.csv contains organization related features (variables) about the 34,300 organizations that requested funding from the non-profit foundation Alphabet Soup.  75,036 of the loans are identified as low-risk loans (loan_status=0) and the remaining 2,500 loans are identified as high-risk loans (loan_status=1).  The purpose of the analysis is to build a machine learning model that would predict the classification of loans into "low-risk" vs. "high-risk" loans; that is, to predict the loan_status.
+1. The dataset charity_data.csv contains organization related features (variables) about the 34,299 organizations that requested funding from the non-profit foundation Alphabet Soup.  18,261 of the organizations are identified as "using the funds effectively" (IS-SUCCESSFUL = 1) and the remaining 16,038 organizations are identified as "not using the funds effectively" (IS-SUCCESSFUL = 0).  The purpose of the analysis is to build a neural network model that would predict the classification of organizations into "successful" vs. "not successful" in using the funds effectively.
 
 2. The dataset also contained the following loan and borrowers' related features (variables) to be included as potential predictors in the logistic regression model. Those variables included:
    - The size of the loan.
