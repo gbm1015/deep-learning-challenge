@@ -29,7 +29,7 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
 1. The dataset charity_data.csv contained potential features (variables) about the 34,299 organizations that requested funding from the non-profit foundation Alphabet Soup. 18,261 of the organizations are identified as "using the funds effectively" (IS-SUCCESSFUL = 1) and the remaining 16,038 organizations are identified as "not using the funds effectively" (IS-SUCCESSFUL = 0).  The purpose of the analysis is to build a neural network model that would predict the classification of organizations into "successful" vs. "not successful" in using the funds effectively; that is, predict whether applicants will be successful if funded by Alphabet Soup.
 
 2. The following steps were implemented for building both Neural Network models:
-   - Pre-proceed the data.
+   - Pre-processed the data.
       * Read in the charity_data.csv to a Pandas DataFrame, and identified the target and the features for the model.
       * Dropped columns that were not considered features for the model.
       * Determined the number of unique values for each column.
