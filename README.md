@@ -4,7 +4,7 @@
 
 The nonprofit foundation Alphabet Soup wants a tool that can help it select the applicants for funding with the best chance of success in their ventures.  With the knowledge of machine learning and neural networks, and using the features in the provided dataset (mentioned below), a binary classifier was created that can predict whether applicants will be successful if funded by Alphabet Soup.
 
-Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that containd more than 34,000 organizations that have received funding from Alphabet Soup over the years.  Within that dataset were a number of columns that captured metadata about each organization.  The columns included the following information:
+Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that containd 34,300 organizations that have received funding from Alphabet Soup over the years.  Within that dataset were a number of columns that captured metadata about each organization.  The columns included the following information:
    - EIN and NAME = The 2 identification columns.
    - APPLICATION_TYPE = Alphabet Soup application type.
    - AFFILIATION = Affiliation sector of industry.
@@ -19,14 +19,14 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
 
 ### Before opening the starterCode folder
 
-1. I created a new repository in GitHub for this project called `deep-learning challenge`. 
+1. I created a new repository in GitHub for this project called `deep-learning-challenge`. 
 2. Inside the new repository I cloned the new repository to my computer.
 3. Inside my local Git repository, I added the starter Jupitor Notebook code Starter_Code.ipynb.
 4. I uploaded Starter_Code.ipynb into Google Colab and completed the steps for building the first Neural Network model and the second optimized Neural Network model.
 
 ## Overview of the Analysis
 
-1. The dataset lending_data.csv contains loan related features (variables) about 77,536 borrowers.  75,036 of the loans are identified as low-risk loans (loan_status=0) and the remaining 2,500 loans are identified as high-risk loans (loan_status=1).  The purpose of the analysis is to build a machine learning model that would predict the classification of loans into "low-risk" vs. "high-risk" loans; that is, to predict the loan_status.
+1. The dataset charity_data.csv contains organization related features (variables) about the 34,300 organizations that requested funding from the non-profit foundation Alphabet Soup.  75,036 of the loans are identified as low-risk loans (loan_status=0) and the remaining 2,500 loans are identified as high-risk loans (loan_status=1).  The purpose of the analysis is to build a machine learning model that would predict the classification of loans into "low-risk" vs. "high-risk" loans; that is, to predict the loan_status.
 
 2. The dataset also contained the following loan and borrowers' related features (variables) to be included as potential predictors in the logistic regression model. Those variables included:
    - The size of the loan.
