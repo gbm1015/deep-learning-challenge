@@ -65,20 +65,17 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
      * Target Variable = "IS_SUCCESSFUL"
      * Features = "NAME","APPLICATION_TYPE","AFFILIATION","CLASSIFICATION","USE_CASE","ORGANIZATION","STATUS","INCOME_AMT",
                    "SPECIAL_CONSIDERATIONS","ASK_AMT".
-       (note-added NAME as a feature, and implemented binning for NAME catergories with counts less than 100 into "Other" category)
-     * Neither Target nor Features = "EIN" and "NAME", the 2 identification columns, that were removed from the input data.
-     * 2 hidden layers and 1 output layer.  Given the few # of features for consideration, the almost 50/50 split between successful vs. non-successful organizations (53%          and 47%, respectively), I anticipated that 2 hidden layers and the selected activation functions would result in an acceptable accuracy and loss scores.
-          The first hidden layer had 10 nodes, and activation function "tanh", 440 parameters.
-          The second hidden layer had 5 nodes, and activation function "relu", 55 parameters.
-          The ouput layer had 1 node, and activation function "relu", 6 parameters.
-          Ran 100 epochs.
-     * After 100 epochs, including binning and scaling the training and testing features' datasets, the model's accuracy score was 72.7% and the loss score was 57.5%.
+       (Note-added NAME as a feature, and implemented binning for NAME catergories with counts less than 100 into "Other" category)
+     * Neither Target nor Features = "EIN", the 1 identification column, that was removed from the input data.
+     * 3 hidden layers and 1 output layer.  Given that the first Neural Network model did not achieve the target model performance of predictive accuracy score of more than        75%, I anticipated that adding another hidden layer, increasing the number of nodes for the second hidden layer, and changing activation function to sigmoid could           help in improving the accuracy of the Neural Network Model. 
+          * The first hidden layer had 10 nodes, and activation function "relu", 750 parameters.
+          * The second hidden layer had 8 nodes, and activation function "sigmoid", 88 parameters.
+          * The third hidden layer had 6 nodes, and activation function "sigmoid", 54 paramters.
+          * The ouput layer had 1 node, and activation function "relu", 7 parameters.
+          * Ran 50 epochs.
+     * After only 50 epochs (half the number of epochs for the first Neural Network model, including binning and scaling the training and testing features' datasets, the           model's accuracy score was 75.3% and the loss score was 49.2%.  Thus, achieving the target model performance of a predictive accuracy score of more than 75%.
 
      
-## Overview of the Prediction Analysis
+## Consideration for further improvements to the model's performance
 
-The Logistic Regression Model (#1) predicts a healthy (low-risk) loan with 100% precision, while it predicts a high-risk loan with a lower precision at 87%. In general,  that logistic regression model is good at predicting whether a loan may default (not a healthy loan, or is a high risk loan) because of its high balanced accuracy at 94.4% and somewhat high f-1 and recall scores. If the bank is still getting a high precision and recall on the test dataset (even if they are lower scores than for the training dataset), it is a good indication about how well the model is likely to perform in real life.  Consequently, the accuracy of the logistic regression model seems to be good enough to start exploring this algorithm in a bank setting for assessing the creditworthiness of borrowers; however, it may be prudent for the bank to start running a pilot with new data to assess the model's reliability on data the model has not "seen" yet.   
-
-The resampled Logistic Regression Model (#2), using the RandomOverSampler module, predicts a healthy/low-risk loan with 100% precision, while it predicts a high-risk loan with a lower precision at 87%; both precision percentages were the same as in the original logistic regression model. However, the balanced accuracy for the resampled logistic regression model is 99.6%, in comparison to 94.4% for the original logistic regression model.  Similarly, the f-1 and recall scores were higher in the resampled logistic regression model.
-
-Therefore, If the goal of the model is to determine the likelihood of high-risk loans, neither models result in above 90% precision score. However, the Logistic Regression Model (#2) results in fewer false predictions for the testing data and would be the beter model to use based on its high accuracy and recall scores.
+Further attempts to improve the predictive accuracy score of future Neural Network models might be achieved by exploring the correlation between the different features and the target variable, to include those features with the highest correlation coefficients in the predictive model.  Another consideration could be using Principal Component Analysis (PCA) for reducing the number of features instead of scaling the features using "StandardScaler."
