@@ -63,7 +63,9 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
       
    - (Optimized) Neural Network Model #2
      * Target Variable = "IS_SUCCESSFUL"
-     * Features = "APPLICATION_TYPE","AFFILIATION","CLASSIFICATION","USE_CASE","ORGANIZATION","STATUS","INCOME_AMT","SPECIAL_CONSIDERATIONS","ASK_AMT".
+     * Features = "NAME","APPLICATION_TYPE","AFFILIATION","CLASSIFICATION","USE_CASE","ORGANIZATION","STATUS","INCOME_AMT",
+                   "SPECIAL_CONSIDERATIONS","ASK_AMT".
+       (note-added NAME as a feature, and implemented binning for NAME catergories with counts less than 100 into "Other" category)
      * Neither Target nor Features = "EIN" and "NAME", the 2 identification columns, that were removed from the input data.
      * 2 hidden layers and 1 output layer.  Given the few # of features for consideration, the almost 50/50 split between successful vs. non-successful organizations (53%          and 47%, respectively), I anticipated that 2 hidden layers and the selected activation functions would result in an acceptable accuracy and loss scores.
           The first hidden layer had 10 nodes, and activation function "tanh", 440 parameters.
@@ -71,20 +73,7 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
           The ouput layer had 1 node, and activation function "relu", 6 parameters.
           Ran 100 epochs.
      * After 100 epochs, including binning and scaling the training and testing features' datasets, the model's accuracy score was 72.7% and the loss score was 57.5%.
-4. The following steps were implemented for building both Logistics Regression models:
-   - Fit a logistic regression model by using the training dataset (x_train and y_train).
-   - Save the predictions for the testing data labels by using the testing feature data (x_test) and the fitted model.
-   - Evaluate the model's performance by generating a confusion matrix and printing the classification report.
 
-5. Logistic Regression Model (#1) Performance Results:
-   - Precision in predicting low-risk loans = 100%.  Precision in predicting high-risk loans = 87%.
-   - Accuracy = 94.4%
-   - Recall in predicting low-risk loans = 100%.  Recall in predicting high-risk loans = 89%.
-  
-   Logistic Regression Model (#2) Performance Results:
-   - Precision in predicting low-risk loans = 100%.  Precision in predicting high-risk loans = 87%.
-   - Accuracy = 99.6%
-   - Recall in predicting low-risk loans = 100%.  Recall in predicting high-risk loans = 100%.
      
 ## Overview of the Prediction Analysis
 
