@@ -4,7 +4,7 @@
 
 The nonprofit foundation Alphabet Soup wants a tool that can help it select the applicants for funding with the best chance of success in their ventures.  With the knowledge of machine learning and neural networks, and using the features in the provided dataset (mentioned below), a binary classifier was created that can predict whether applicants will be successful if funded by Alphabet Soup.
 
-Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that containd 34,299 organizations that have received funding from Alphabet Soup over the years.  Within that dataset were a number of columns that captured metadata about each organization.  The columns included the following information:
+Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that containd information about 34,299 organizations that have received funding from Alphabet Soup over the years.  Within that dataset were a number of columns that captured metadata about each organization.  The columns included the following information:
    - EIN and NAME = The 2 identification columns.
    - APPLICATION_TYPE = Alphabet Soup application type.
    - AFFILIATION = Affiliation sector of industry.
@@ -26,16 +26,20 @@ Alphabet Soup's business team provided a CSV dataset, charity_data.csv, that con
 
 ## Overview of the Analysis
 
-1. The dataset charity_data.csv contains organization related features (variables) about the 34,299 organizations that requested funding from the non-profit foundation Alphabet Soup.  18,261 of the organizations are identified as "using the funds effectively" (IS-SUCCESSFUL = 1) and the remaining 16,038 organizations are identified as "not using the funds effectively" (IS-SUCCESSFUL = 0).  The purpose of the analysis is to build a neural network model that would predict the classification of organizations into "successful" vs. "not successful" in using the funds effectively.
+1. The dataset charity_data.csv contained potential features (variables) about the 34,299 organizations that requested funding from the non-profit foundation Alphabet Soup. 18,261 of the organizations are identified as "using the funds effectively" (IS-SUCCESSFUL = 1) and the remaining 16,038 organizations are identified as "not using the funds effectively" (IS-SUCCESSFUL = 0).  The purpose of the analysis is to build a neural network model that would predict the classification of organizations into "successful" vs. "not successful" in using the funds effectively; that is, predict whether applicants will be successful if funded by Alphabet Soup.
 
-2. The dataset also contained the following loan and borrowers' related features (variables) to be included as potential predictors in the logistic regression model. Those variables included:
-   - The size of the loan.
-   - The interest rate for the loan.
-   - The borrower's income.
-   - The borrower's total debt to income ratio.
-   - The number of accounts the borrower has.
-   - Presence of any derogatory marks against the borrower (0/1 flag).
-   - The borrower's total debt amount.
+2. The following steps were implemented for building both Neural Network models:
+   - Pre-proceed the data.
+      * Read in the charity_data.csv to a Pandas DataFrame, and identified the target and the features for the model.
+      * Dropped columns that were not considered features for the model.
+      * Determined the number of unique values for each column.
+      * Used the number of data points for each unique value to pick a cutoff point to bin "rare" categorial variables together in a new value "other", and checked if the           binning was successful.
+      * Used pd.get.dummies() to encode categorical variables.
+      * Split the preprocessed data into a features array x, and a target array y.  Then used these arrays and the train_test_split function to split the data into training         and testing datasets.
+      * Scaled the training and testing features datasets by creating a StandardScaler instance, fitting it to the training data, then used the transform function.
+        
+   - Save the predictions for the testing data labels by using the testing feature data (x_test) and the fitted model.
+   - Evaluate the model's performance by generating a confusion matrix and printing the classification report.
 
 3. Two different models were developed:
    - Logistic Regression Model (#1) with the original dataset lending_data.csv, that included 75,036 low-risk loans and 2,500 high-risk loans.  The dataset was split into 2      groups (75% to 25% split); the training dataset for building the model with 58,152 borrowers that included 56,277 low-risk loans and 1,875 high-risk loans, and the          test dataset with 19,384 borrowers that included 18,759 low-risk loans and 625 high-risk loans.
